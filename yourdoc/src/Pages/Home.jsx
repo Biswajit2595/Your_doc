@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 function Home() {
 return (
-    <div>Home</div>
+    <Box>Home
+        <h1>SDGAEDF</h1>
+    </Box>
 )
 }
 
