@@ -10,20 +10,23 @@ import Store from '../Pages/Store'
 import Blogs from '../Pages/Blogs'
 
 function AllRoutes() {
-  return (
+
+
+
+return (
     <div>
         <Routes>
-            <Route path='/medicine' element={ <Medicine/> } />
-            <Route path='/healthcare' element={ <Healthcare/> } />
+            <Route path='/medicine' element={ <Medicine /> } />
+            <Route path='/healthcare' element={ <Healthcare /> } />
             <Route path='/healthdevices' element={ <HealthDevices/> } />
             <Route path='/labtests' element={ <LabTest /> } />
             <Route path='/doctors' element={ <Doctors /> } />
             <Route path='/appointments' element={ <Appointments /> } />
             <Route path='/stores' element={ <Store /> } />
-            <Route path='/blog' element={ <Blogs /> } />
+            <Route path='/blogs' element={ <Blogs /> } />
         </Routes>
     </div>
-  )
+)
 }
 
 export default AllRoutes
