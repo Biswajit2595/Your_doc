@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../Components/yourdoc.svg'
 import { NavLink } from 'react-router-dom';
+import {  HStack, Image, VStack,Flex,Text, Spacer, Box } from '@chakra-ui/react';
 
 const link=[
     { to:'/medicine',title:'Medicine' },
@@ -16,24 +17,36 @@ const link=[
 
 function Navbar() {
 return (
-    <div>
-        <div style={{ display:'flex', justifyContent:'space-between',padding:'10px'}} >
-            <img src={logo} width='150px' alt='logo' />
-            <div style={{ display:'flex',alignItems:'center',justifyContent:'space-between' }}>
-                <h4> Download | </h4>
-                <h4> Hello username | </h4>
-                <h4> Offers |</h4>
-                <h4>cart</h4>
-            </div>
-        </div>
-        <div style={{ display:'flex',alignItems:'center', justifyContent:'space-between',width:'90%',margin:'auto', padding:'10px' }} >
-            {
-                link.map(link=>(
-                    <NavLink key={link.to} >{link.title}</NavLink>
+    <VStack >
+        <Flex alignItems="center" bg='pink.100' w='95%'>
+        <Box  justify='' >
+            <Image src={logo} w='150px' h='50px' alt='logo' />
+            </Box>
+            <Spacer/>
+            <Box>
+                <HStack>
+                <Text>Download |</Text>
+                <Text>Hello username |</Text>
+                <Text>Offers |</Text>
+                <Text>cart</Text>
+                </HStack>
+        </Box>
+        </Flex>
+
+{/* /========================================================== */}
+
+        <HStack boxShadow='base' w='95%' justify='space-between' bg='green.100' >
+                        {
+                link.map((link)=>(
+                    <NavLink 
+                    style={{textDecoration:'none',fontWeight:'bolder'}}
+                    to={link.to}
+                    key={link.to}
+                    >{link.title}</NavLink>
                 ))
             }
-        </div>
-    </div>
+        </HStack>
+    </VStack>
 )}
 
 
