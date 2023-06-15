@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const link=[
     { to:'/medicine',title:'Medicine' },
     { to:'/healthcare',title:'Healthcare' },
-    { to:'/healtdevices',title:'Health Devices' },
+    { to:'/healthdevices',title:'Health Devices' },
     { to:'/labtests',title:'Lab Tests' },
     { to:'/doctors',title:'Doctors' },
     { to:'/appointments',title:'Book Appointments' },
