@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../Components/yourdoc.svg'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {  HStack, Image, VStack,Flex,Text, Spacer, Box } from '@chakra-ui/react';
+import { AuthContext } from '../Context/AuthContext';
 
 const link=[
     { to:'/medicine',title:'Medicine' },
@@ -16,26 +17,28 @@ const link=[
 
 
 function Navbar() {
+    const { authState }=useContext(AuthContext)
+    const { isAuth, username }=authState
+    console.log(authState)
 return (
     <VStack >
-        <Flex alignItems="center" bg='pink.100' w='95%'>
-        <Box  justify='' >
-            <Image src={logo} w='150px' h='50px' alt='logo' />
+        <Flex alignItems="center" bg='pink.100' rounded='sm' w='95%'>
+        <Box justify='center' padding='2px' >
+            <Image src={logo}  marginLeft='10px' w='150px' h='50px' alt='logo' />
             </Box>
             <Spacer/>
-            <Box>
+            <Box justify='center' padding='2px' paddingRight='10px' >
                 <HStack>
                 <Text>Download |</Text>
-                <Text>Hello username |</Text>
-                <Text>Offers |</Text>
-                <Text>cart</Text>
+                { 
+                isAuth?(<Text> Hello {username}! |</Text>):(<Text><Link to='/login' >Login/SignUp</Link></Text>)
+                }
+
+                <Text>| cart</Text>
                 </HStack>
         </Box>
         </Flex>
-
-{/* /========================================================== */}
-
-        <HStack boxShadow='base' w='95%' justify='space-between' bg='green.100' >
+        <HStack boxShadow='base' rounded='sm' w='95%' justify='space-between' bg='green.100' >
                         {
                 link.map((link)=>(
                     <NavLink 

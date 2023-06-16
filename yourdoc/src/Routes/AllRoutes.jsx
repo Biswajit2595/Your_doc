@@ -9,6 +9,8 @@ import Appointments from '../Pages/Appointments'
 import Store from '../Pages/Store'
 import Blogs from '../Pages/Blogs'
 import Home from '../Pages/Home'
+import Login from '../Pages/Login'
+import SignUp from '../Pages/SignUp'
 
 function AllRoutes() {
 
@@ -18,6 +20,8 @@ return (
     <div>
         <Routes>
             <Route path='/' element={ <Home /> } />
+            <Route path='/login' element={ <Login /> } />
+            <Route path='/signup' element={ <SignUp /> } />
             <Route path='/medicine' element={ <Medicine /> } />
             <Route path='/healthcare' element={ <Healthcare /> } />
             <Route path='/healthdevices' element={ <HealthDevices/> } />
