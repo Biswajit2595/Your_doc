@@ -1,10 +1,12 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
+import Footer from '../Components/Footer';
 
 function Home() {
 return (
-    <Box>Home
-        <h1>SDGAEDF</h1>
+    <Box>
+        <Heading>Home</Heading>
+        <Footer />
     </Box>
 )
 }
