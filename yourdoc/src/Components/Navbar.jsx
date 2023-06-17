@@ -21,7 +21,7 @@ function Navbar() {
     const { isAuth, username }=authState
     console.log(authState)
 return (
-    <VStack >
+    <VStack w='100%' m='auto' >
         <Flex alignItems="center" bg='pink.100' rounded='sm' w='95%'>
         <Box justify='center' padding='2px' >
             <Image src={logo}  marginLeft='10px' w='150px' h='50px' alt='logo' />
