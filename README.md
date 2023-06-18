@@ -1,7 +1,7 @@
 # earthy-smell-701
 
 ## YOUR DOC 
-![YOUR DOC](yourdoc\src\Components\yourdoc.svg)
+![YOUR DOC](./yourdoc/src/Components/yourdoc.svg)
 
 ## Folder Structure
 
