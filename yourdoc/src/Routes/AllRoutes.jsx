@@ -1,20 +1,15 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Medicine from '../Pages/Medicine'
-import Healthcare from '../Pages/Healthcare'
-import HealthDevices from '../Pages/HealthDevices'
-import LabTest from '../Pages/LabTest'
 import Doctors from '../Pages/Doctors';
 import Appointments from '../Pages/Appointments'
-import Store from '../Pages/Store'
-import Blogs from '../Pages/Blogs'
 import Home from '../Pages/Home'
 import Login from '../Pages/Login'
 import SignUp from '../Pages/SignUp'
+import YourAppointment from '../Pages/YourAppointments'
+import PrivateRoutes from './PrivateRoute';
+import AboutUs from '../Pages/About';
 
 function AllRoutes() {
-
-
 
 return (
     <div>
@@ -22,14 +17,19 @@ return (
             <Route path='/' element={ <Home /> } />
             <Route path='/login' element={ <Login /> } />
             <Route path='/signup' element={ <SignUp /> } />
-            <Route path='/medicine' element={ <Medicine /> } />
-            <Route path='/healthcare' element={ <Healthcare /> } />
-            <Route path='/healthdevices' element={ <HealthDevices/> } />
-            <Route path='/labtests' element={ <LabTest /> } />
+            <Route path='/yourappointment' element={ 
+            <PrivateRoutes>
+                <YourAppointment />
+            </PrivateRoutes>
+            } />
+            {/* <Route path='/healthcare' element={ <Healthcare /> } /> */}
             <Route path='/doctors' element={ <Doctors /> } />
-            <Route path='/appointments' element={ <Appointments /> } />
-            <Route path='/stores' element={ <Store /> } />
-            <Route path='/blogs' element={ <Blogs /> } />
+            <Route path='/appointments' element={ 
+            <PrivateRoutes>
+                <Appointments />
+            </PrivateRoutes>
+            } />
+            <Route path='/about' element={ <AboutUs /> } />
         </Routes>
     </div>
 )
