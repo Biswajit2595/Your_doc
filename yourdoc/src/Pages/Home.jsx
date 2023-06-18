@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react';
 import Footer from '../Components/Footer';
 import ChooseUs from '../Components/ChooseUs';
 import Appointment from '../Components/Appointment';
+import Advert from '../Components/Advert';
 
 function Home() {
 return (
@@ -15,6 +16,7 @@ return (
         >
         </Box>
         <Appointment />
+        <Advert />
         <ChooseUs />
         <Footer />
     </Box>
